@@ -14,10 +14,10 @@ class EvalVisitor(BasicVisitor):
     def __init__(self, dataSegment) -> None:
         super().__init__()
         # Print the .data Segment
-        generateDataSegment(dataSegment)
+        DataSegment(dataSegment)
 
     def visitProg(self, ctx:BasicParser.ProgContext):
-        printTextSegment()   
+        printTexto()   
         return self.visitChildren(ctx)
 
     def visitAssign(self, ctx:BasicParser.AssignContext):
@@ -68,7 +68,7 @@ class EvalVisitor(BasicVisitor):
         left = self.visit(ctx.expr(0))
         right = self.visit(ctx.expr(1))
 
-        generateMul(left, right)
+        Mult(left, right)
 
         return left * right
     
@@ -78,7 +78,7 @@ class EvalVisitor(BasicVisitor):
         left = self.visit(ctx.expr(0))
         right = self.visit(ctx.expr(1))
 
-        generateDiv(left, right)
+        Div(left, right)
 
         return left // right
 
@@ -88,7 +88,7 @@ class EvalVisitor(BasicVisitor):
         left = self.visit(ctx.expr(0))
         right = self.visit(ctx.expr(1))
 
-        generateAdd(left, right)
+        Sum(left, right)
 
         return left + right
     
@@ -98,7 +98,7 @@ class EvalVisitor(BasicVisitor):
         left = self.visit(ctx.expr(0))
         right = self.visit(ctx.expr(1))
 
-        generateSub(left, right)
+        Rest(left, right)
 
         return left - right
     

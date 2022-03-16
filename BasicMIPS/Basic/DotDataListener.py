@@ -1,6 +1,4 @@
-'''
-Fetches all initializations in source code and generates the .data segment
-'''
+
 from antlr.BasicListener import BasicListener
 from antlr.BasicParser import BasicParser
 
