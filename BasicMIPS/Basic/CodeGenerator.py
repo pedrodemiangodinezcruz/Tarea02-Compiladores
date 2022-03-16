@@ -27,9 +27,12 @@ def generateAssignment(id, value=None, type='int'):
     generarLabel(id, value, type)
 
 def generateReAssignment(id:str, newvalue:int):
-    printInstruction('la', ['$a0', id])       # get address
-    printInstruction('move', ['$a1', RESULT_REGISTER])    # new val in v0
-    printInstruction('sw', ['$a1', '0($a0)'])    # save new value
+    printInstruction('la', ['$a0', id])      
+	# obtener dirección
+    printInstruction('move', ['$a1', RESULT_REGISTER])
+	# asignar val en v0
+    printInstruction('sw', ['$a1', '0($a0)']) 
+	# guardar nuevo valor
     
 
 def Sum(left:int, right:int):

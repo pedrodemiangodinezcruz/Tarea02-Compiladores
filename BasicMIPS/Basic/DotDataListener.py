@@ -5,7 +5,7 @@ from antlr.BasicParser import BasicParser
 class DotDataListener(BasicListener):
     initial_values = dict() 
 
-    # Assigment node corresponds to ID = INT
+    # Nodo ID al INT
     def exitAssign(self, ctx:BasicParser.AssignContext):
         id = ctx.ID().getText()
         value = int(ctx.INT().getText())

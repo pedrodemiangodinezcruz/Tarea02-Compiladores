@@ -21,7 +21,7 @@ def main():
     tree = parser.prog() 
     print(Trees.toStringTree(tree, None, parser))
 
-    # Open output file
+    # Escribir archivo output
     stdout = sys.stdout
     with open(outputfile(test), 'w') as f:
         sys.stdout = f
@@ -33,9 +33,9 @@ def main():
 
         dataSegment = dotData.getDataSegment()
 
-        # Generate .text segment with the visitor 
+        # Genera .text segment con el visitor
         eval = EvalVisitor(dataSegment)
-        eval.visit(tree)  # prints out all text segment
+        eval.visit(tree)  # print del texto
 
         sys.stdout = stdout
         f.close()
