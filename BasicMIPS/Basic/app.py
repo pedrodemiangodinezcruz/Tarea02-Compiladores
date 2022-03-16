@@ -8,7 +8,7 @@ from antlr4.tree.Trees import Trees
 import sys
 
 testNum = 4
-inputfile = lambda x : f'basic{x}.txt'
+inputfile = lambda x : f'in{x}.txt'
 outputfile = lambda x : f'out{x}.asm'
 
 def main():
